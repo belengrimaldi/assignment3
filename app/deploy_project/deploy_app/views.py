@@ -4,5 +4,13 @@ from django.http import HttpResponse
 # Create your views here.
 
 def hello(request):
-   text = """<h1>welcome to my app !</h1>"""
+   text = """<p1>welcome to my app !</p1>"""
+   return HttpResponse(text)
+
+def seatingsection(request):
+   text = """<h1>welcome to my app ! this is the seating section page</h1>"""
+   return HttpResponse(text)
+
+def staffmembers(request):
+   text = """<h1>welcome to my app ! this is the staffmembers page</h1>"""
    return HttpResponse(text)
