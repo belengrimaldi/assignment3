@@ -8,8 +8,7 @@ def hello(request):
    return HttpResponse(text)
 
 def seatingsection(request):
-   text = """<h1>welcome to my app ! this is the seating section page</h1>"""
-   return HttpResponse(text)
+   return render(request, 'seatingSection.html')
 
 def staffmembers(request):
    text = """<h1>welcome to my app ! this is the staffmembers page</h1>"""
