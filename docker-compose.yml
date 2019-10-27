@@ -26,7 +26,10 @@ services:
       - ./app:/app
     ports:
       - '8000:8000'
-    command: bash -c "sleep 10 && python /app/deploy_project/manage.py migrate && mod_wsgi-express start-server --working-directory /app/deploy_project --reload-on-changes /app/deploy_project/deploy_project/wsgi.py"
+    command: bash -c "sleep 10 && python /app/deploy_project/manage.py migrate && 
+                mod_wsgi-express start-server --working-directory /app/deploy_project 
+                  --reload-on-changes /app/deploy_project/deploy_project/wsgi.py" &&
+                    python manage.py loaddata ./deploy_app/fixtures/db.json
 
 networks:
   backend:
